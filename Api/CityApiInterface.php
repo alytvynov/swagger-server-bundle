@@ -1,7 +1,6 @@
 <?php
 /**
- * SwaggerServerBundle
- *
+ * CityApiInterface
  * PHP version 5
  *
  * @category Class
@@ -27,24 +26,42 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Server;
+namespace Swagger\Server\Api;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Swagger\Server\DependencyInjection\Compiler\SwaggerServerApiPass;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Swagger\Server\Model\City;
 
 /**
- * SwaggerServerBundle Class Doc Comment
+ * CityApiInterface Interface Doc Comment
  *
- * @category Class
- * @package  Swagger\Server
+ * @category Interface
+ * @package  Swagger\Server\Api
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class SwaggerServerBundle extends Bundle
+interface CityApiInterface
 {
-    public function build(ContainerBuilder $container)
-    {
-        $container->addCompilerPass(new SwaggerServerApiPass());
-    }
+
+    /**
+     * Sets authentication method api_key
+     *
+     * @param string $value Value of the api_key authentication method.
+     *
+     * @return void
+     */
+    public function setapi_key($value);
+
+    /**
+     * Operation getCityById
+     *
+     * Find City by ID
+     *
+     * @param  int $cityId  ID of City to return (required)
+     * @param  integer $responseCode     The HTTP response code to return
+     * @param  array   $responseHeaders  Additional HTTP headers to return with the response ()
+     *
+     * @return Swagger\Server\Model\City[]
+     *
+     */
+    public function getCityById($cityId, &$responseCode, array &$responseHeaders);
 }

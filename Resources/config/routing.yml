@@ -2,28 +2,12 @@
 # https://github.com/swagger-api/swagger-codegen
 # Do not edit the class manually.
 
-# pet
-swagger_server_pet_deletepet:
-    path:     /pet/{petId}
-    methods:  [DELETE]
-    defaults:
-        _controller: swagger_server.controller.pet:deletePetAction
-    requirements:
-        petId: '\d+'
-
-swagger_server_pet_getpetbyid:
-    path:     /pet/{petId}
+# city
+swagger_server_city_getcitybyid:
+    path:     /cities/{cityId}
     methods:  [GET]
     defaults:
-        _controller: swagger_server.controller.pet:getPetByIdAction
+        _controller: swagger_server.controller.city:getCityByIdAction
     requirements:
-        petId: '\d+'
-
-swagger_server_pet_updatepetwithform:
-    path:     /pet/{petId}
-    methods:  [POST]
-    defaults:
-        _controller: swagger_server.controller.pet:updatePetWithFormAction
-    requirements:
-        petId: '\d+'
+        cityId: '\d+'
 

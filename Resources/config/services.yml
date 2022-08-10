@@ -19,8 +19,8 @@ services:
     swagger_server.service.validator:
         class: "%swagger_server.validator%"
 
-    swagger_server.controller.pet:
-        class: Swagger\Server\Controller\PetController
+    swagger_server.controller.city:
+        class: Swagger\Server\Controller\CityController
         calls:
          - [setSerializer, ['@swagger_server.service.serializer']]
          - [setValidator,  ['@swagger_server.service.validator']]
