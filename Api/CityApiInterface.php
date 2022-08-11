@@ -63,5 +63,5 @@ interface CityApiInterface
      * @return Swagger\Server\Model\City[]
      *
      */
-    public function getCityById($cityId, &$responseCode, array &$responseHeaders);
+    public function getCityById($cityId);
 }
